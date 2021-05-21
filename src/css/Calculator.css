@@ -1,0 +1,9 @@
+.rowItem{
+    /* display:inline-block;
+    align-items: center; */
+}
+
+.buttons-grid .col-auto {
+    display:inline-block;
+    padding: 0 10px 10px 0px;
+}

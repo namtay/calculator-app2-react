@@ -1,10 +1,20 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Button from './Button';
 import EqualsButton from "./EqualsButton"
 import ClearButton from "./ClearButton"
+import "../css/Calculator.css";
 
 function Calculator() {
     const [input, setInput] = useState('');
+    const [prevNum, setPrevNum] = useState('');
+    const [curNum, setCurNum] = useState('');
+    const [operator, setOperator] = useState('');
+
+
+    useEffect(()=>{
+
+    },[curNum,operator,prevNum])
+
 
     const clickButton=()=>{
 
@@ -48,28 +58,28 @@ function Calculator() {
           </div>
         </div>
         <div className="card-body buttons-grid">
-                <div className="row">
-                   <Button handleClick={clickButton}></Button>
+                <div className="row rowItem">
+                   <Button handleClick={clickButton}>+</Button>
                    <Button handleClick={clickButton}>7</Button>
-                    <Button handleClick={clickButton}>8</Button>
+                   <Button handleClick={clickButton}>8</Button>
                    <Button handleClick={clickButton}>9</Button>  
                    <Button handleClick={operation_Func}>/</Button>
                 </div> 
-                <div className="row">
-                  <Button handleClick={clickButton}></Button>
+                <div className="row rowItem">
+                  <Button handleClick={clickButton}>-</Button>
                     <Button handleClick={clickButton}>4</Button>
                     <Button handleClick={clickButton}>5</Button>
                     <Button handleClick={clickButton}>6</Button>
                     <Button handleClick={operation_Func}>*</Button>
                 </div>
-                <div className="row">
+                <div className="row rowItem">
                    <Button handleClick={clickButton}>%</Button>
                    <Button handleClick={clickButton}>3</Button>
                    <Button handleClick={clickButton}>2</Button>
                    <Button handleClick={clickButton}>1</Button>
                    <Button handleClick={operation_Func}>-</Button>
                 </div>
-                <div className="row">
+                <div className="row rowItem">
                     <ClearButton handleClear={handleClear}>CE</ClearButton>
                    <Button handleClick={addZeroToInput}>0</Button>
                    <Button handleClick={addDecimalToInput}>.</Button>
